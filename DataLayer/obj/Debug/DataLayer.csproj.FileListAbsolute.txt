@@ -1,0 +1,10 @@
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\DataLayer.dll.config
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\DataLayer.dll
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\DataLayer.pdb
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\EntityFramework.dll
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\EntityFramework.xml
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.dll
+c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.pdb

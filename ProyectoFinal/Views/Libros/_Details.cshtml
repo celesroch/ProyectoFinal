@@ -1,0 +1,52 @@
+﻿@model DataLayer.Libros
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">
+            <bold>@Resources.Resources.SelectionBook</bold><i> @Html.DisplayFor(model => model.nomLibro)</i>
+        </h4>
+    </div> 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Resources.Resources.ISBN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Author
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autor)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Editorial
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.editorial)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Commentary
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+    </dl>
+
+</div>
+

@@ -1,0 +1,50 @@
+﻿@model DataLayer.Libros
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>@Resources.Resources.SelectionBook <i>@Html.DisplayFor(model => model.nomLibro)</i></h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Resources.Resources.ISBN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Author
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autor)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Editorial
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.editorial)
+        </dd>
+
+        <dt>
+            @Resources.Resources.Commentary
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idLibro }) |
+    @Html.ActionLink("Back to List", "MostrarLibros", "Libros")
+</p>
+

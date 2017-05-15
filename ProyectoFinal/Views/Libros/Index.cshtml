@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DataLayer.Libros>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(Resources.Resources.NewBook, "Create")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Resources.Resources.NameBook
+        </th>
+        <th>
+            @Resources.Resources.ISBN
+        </th>
+        <th>
+            @Resources.Resources.Author
+        </th>
+        <th>
+            @Resources.Resources.Editorial
+        </th>
+        <th>
+            @Resources.Resources.Commentary
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomLibro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.editorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idLibro }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idLibro }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idLibro })
+        </td>
+    </tr>
+}
+
+</table>
