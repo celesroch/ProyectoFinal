@@ -8,38 +8,37 @@
 <div>
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">
-            <bold>@Resources.Resources.SelectionBook</bold><i> @Html.DisplayFor(model => model.nomLibro)</i>
-        </h4>
+        <h3 class="modal-title" id="myModalLabel">
+            <b>@Resources.Resources.SelectionBook</b><i> @Html.DisplayFor(model => model.nomLibro)</i>
+        </h3>
     </div>
-    <div class="form-group row" style="margin-left:100px">
+    <div class="form-group row" style="margin-left:50px">
         <div>
             <label for="example-text-input" class="col-2 col-form-label">@Resources.Resources.ISBN</label>
         </div>
-        <div class="col-5">
-            <input class="form-control" type="text" value="@Html.DisplayFor(model => model.ISBN)" id="example-text-input" disabled>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.ISBN)
         </div>
 
         <div>
             <label for="example-text-input" class="col-2 col-form-label">@Resources.Resources.Author</label>
         </div>
-        <div class="col-5">
-            <input class="form-control" type="text" value="@Html.DisplayFor(model => model.autor)" id="example-text-input" disabled>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.autor)
         </div>
 
         <div>
             <label for="example-text-input" class="col-2 col-form-label">@Resources.Resources.Editorial</label>
         </div>
-        <div class="col-5">
-            <input class="form-control" type="text" value="@Html.DisplayFor(model => model.editorial)" id="example-text-input" disabled>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.editorial)
         </div>
 
         <div>
             <label for="example-text-input" class="col-2 col-form-label">@Resources.Resources.Commentary</label>
         </div>
-        <div class="col-5">
-            <input class="form-control" type="text" value="@Html.DisplayFor(model => model.comentario)" id="example-text-input" disabled>
+        <div class="well well-sm">
+            @Html.DisplayFor(model => model.comentario)
         </div>
     </div>
 </div>
-

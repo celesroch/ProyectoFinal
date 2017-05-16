@@ -23,8 +23,19 @@
     <Property Name="editorial" Type="nchar" MaxLength="80" />
     <Property Name="comentario" Type="nchar" MaxLength="180" />
   </EntityType>
+  <EntityType Name="Operaciones">
+    <Key>
+      <PropertyRef Name="idCliente" />
+      <PropertyRef Name="idLibro" />
+    </Key>
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="idLibro" Type="int" Nullable="false" />
+    <Property Name="estado" Type="nvarchar" MaxLength="50" />
+    <Property Name="fecha" Type="datetime" />
+  </EntityType>
   <EntityContainer Name="AlquilerLibrosModelStoreContainer">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

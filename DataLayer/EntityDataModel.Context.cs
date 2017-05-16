@@ -27,5 +27,6 @@ namespace DataLayer
     
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Libros> Libros { get; set; }
+        public virtual DbSet<Operaciones> Operaciones { get; set; }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AlquilerLibrosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AlquilerLibrosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Clientes">
           <Key>
             <PropertyRef Name="idCliente" />
@@ -28,12 +28,22 @@
           <Property Name="editorial" Type="nchar" MaxLength="80" />
           <Property Name="comentario" Type="nchar" MaxLength="180" />
         </EntityType>
+        <EntityType Name="Operaciones">
+          <Key>
+            <PropertyRef Name="idCliente" />
+            <PropertyRef Name="idLibro" />
+          </Key>
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="idLibro" Type="int" Nullable="false" />
+          <Property Name="estado" Type="nvarchar" MaxLength="50" />
+          <Property Name="fecha" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="AlquilerLibrosModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlquilerLibrosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -63,7 +73,18 @@
         <EntityContainer Name="AlquilerLibrosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Libros" EntityType="Self.Libros" />
+          <EntitySet Name="Operaciones" EntityType="AlquilerLibrosModel.Operaciones" />
         </EntityContainer>
+        <EntityType Name="Operaciones">
+          <Key>
+            <PropertyRef Name="idCliente" />
+            <PropertyRef Name="idLibro" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idLibro" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -92,6 +113,16 @@
                 <ScalarProperty Name="autor" ColumnName="autor" />
                 <ScalarProperty Name="editorial" ColumnName="editorial" />
                 <ScalarProperty Name="comentario" ColumnName="comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operaciones">
+            <EntityTypeMapping TypeName="AlquilerLibrosModel.Operaciones">
+              <MappingFragment StoreEntitySet="Operaciones">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

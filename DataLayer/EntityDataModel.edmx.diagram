@@ -7,6 +7,7 @@
       <Diagram DiagramId="2e9fddf352d34fc0b85f77c2ad3af735" Name="Diagram1">
         <EntityTypeShape EntityType="AlquilerLibrosModel.Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AlquilerLibrosModel.Libros" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlquilerLibrosModel.Operaciones" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
