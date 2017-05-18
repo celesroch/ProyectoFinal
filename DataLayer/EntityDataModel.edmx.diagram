@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="AlquilerLibrosModel.Clientes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AlquilerLibrosModel.Libros" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AlquilerLibrosModel.Operaciones" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AlquilerLibrosModel.UserTable" Width="1.5" PointX="7" PointY="1.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

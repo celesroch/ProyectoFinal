@@ -10,54 +10,61 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-horizontal">
         <h4>Libros</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.nomLibro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="row">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <label>@Resources.Resources.NameBook</label>
+            </div>
+            <div class="col-xs-3 col-md-3 col-lg-3">
                 @Html.EditorFor(model => model.nomLibro, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nomLibro, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <label>@Resources.Resources.ISBN</label>
+            </div>
+            <div class="col-xs-3 col-md-3 col-lg-3">
                 @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.autor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <label>@Resources.Resources.Author</label>
+            </div>
+            <div class="col-xs-3 col-md-3 col-lg-3">
                 @Html.EditorFor(model => model.autor, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.autor, "", new { @class = "text-danger" })
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.editorial, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <label>@Resources.Resources.Editorial</label>
+            </div>
+            <div class="col-xs-3 col-md-3 col-lg-3">
                 @Html.EditorFor(model => model.editorial, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.editorial, "", new { @class = "text-danger" })
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.comentario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <label>@Resources.Resources.Commentary</label>
+            </div>
+            <div class="col-xs-8 col-md-8 col-lg-8">
                 @Html.EditorFor(model => model.comentario, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.comentario, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-warning" />
             </div>
         </div>
     </div>

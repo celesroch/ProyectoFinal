@@ -26,7 +26,7 @@
           <Property Name="ISBN" Type="nvarchar" MaxLength="15" />
           <Property Name="autor" Type="nvarchar" MaxLength="100" />
           <Property Name="editorial" Type="nchar" MaxLength="80" />
-          <Property Name="comentario" Type="nchar" MaxLength="180" />
+          <Property Name="comentario" Type="text" />
         </EntityType>
         <EntityType Name="Operaciones">
           <Key>
@@ -38,10 +38,20 @@
           <Property Name="estado" Type="nvarchar" MaxLength="50" />
           <Property Name="fecha" Type="datetime" />
         </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="idUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="AlquilerLibrosModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -68,12 +78,13 @@
           <Property Name="ISBN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="autor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="editorial" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
-          <Property Name="comentario" Type="String" MaxLength="180" FixedLength="true" Unicode="true" />
+          <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="AlquilerLibrosEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Libros" EntityType="Self.Libros" />
           <EntitySet Name="Operaciones" EntityType="AlquilerLibrosModel.Operaciones" />
+          <EntitySet Name="UserTable" EntityType="AlquilerLibrosModel.UserTable" />
         </EntityContainer>
         <EntityType Name="Operaciones">
           <Key>
@@ -84,6 +95,15 @@
           <Property Name="idLibro" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="idUsuario" Type="Guid" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -123,6 +143,16 @@
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="idLibro" ColumnName="idLibro" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTable">
+            <EntityTypeMapping TypeName="AlquilerLibrosModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -70,7 +70,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comentario.
+        ///   Looks up a localized string similar to Sinopsis.
         /// </summary>
         internal static string Commentary {
             get {

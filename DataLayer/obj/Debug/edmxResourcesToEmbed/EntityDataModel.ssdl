@@ -21,7 +21,7 @@
     <Property Name="ISBN" Type="nvarchar" MaxLength="15" />
     <Property Name="autor" Type="nvarchar" MaxLength="100" />
     <Property Name="editorial" Type="nchar" MaxLength="80" />
-    <Property Name="comentario" Type="nchar" MaxLength="180" />
+    <Property Name="comentario" Type="text" />
   </EntityType>
   <EntityType Name="Operaciones">
     <Key>

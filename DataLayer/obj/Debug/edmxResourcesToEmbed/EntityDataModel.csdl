@@ -21,7 +21,7 @@
     <Property Name="ISBN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="autor" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="editorial" Type="String" MaxLength="80" FixedLength="true" Unicode="true" />
-    <Property Name="comentario" Type="String" MaxLength="180" FixedLength="true" Unicode="true" />
+    <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="AlquilerLibrosEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
