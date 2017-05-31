@@ -150,4 +150,10 @@
   <data name="Details" xml:space="preserve">
     <value>Más información</value>
   </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Alta Usuario</value>
+  </data>
+  <data name="SectionAltaUserName" xml:space="preserve">
+    <value>Nuevo Usuario:</value>
+  </data>
 </root>

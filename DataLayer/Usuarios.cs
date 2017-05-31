@@ -12,11 +12,13 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class UserTable
+    public partial class Usuarios
     {
-        public System.Guid idUsuario { get; set; }
-        public string Email { get; set; }
+        public int idUsuario { get; set; }
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
+        public string NomUsuario { get; set; }
         public string Password { get; set; }
-        public string PasswordSalt { get; set; }
+        public string Email { get; set; }
     }
 }

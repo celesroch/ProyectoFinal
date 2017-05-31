@@ -142,6 +142,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alta Usuario.
+        /// </summary>
+        internal static string NewUser {
+            get {
+                return ResourceManager.GetString("NewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nuevo Usuario:.
+        /// </summary>
+        internal static string SectionAltaUserName {
+            get {
+                return ResourceManager.GetString("SectionAltaUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Libros.
         /// </summary>
         internal static string SeeBooks {

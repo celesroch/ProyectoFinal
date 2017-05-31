@@ -27,6 +27,7 @@
     <EntitySet Name="Clientes" EntityType="Self.Clientes" />
     <EntitySet Name="Libros" EntityType="Self.Libros" />
     <EntitySet Name="Operaciones" EntityType="AlquilerLibrosModel.Operaciones" />
+    <EntitySet Name="Usuarios" EntityType="AlquilerLibrosModel.Usuarios" />
   </EntityContainer>
   <EntityType Name="Operaciones">
     <Key>
@@ -37,5 +38,16 @@
     <Property Name="idLibro" Type="Int32" Nullable="false" />
     <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="fecha" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NomUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
