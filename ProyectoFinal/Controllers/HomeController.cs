@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoFinal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,27 @@ namespace ProyectoFinal.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ViewResult Index(Usuarios login)
+        {
+            if (ModelState.IsValid)
+            {
+                if (login.checkUser(login.NomUsuario, login.Password))
+                {
+                    return View("Show", login);
+                }
+                else
+                {
+                    ViewBag.Message = "Usuario o password incorrecto";
+                    return View();
+                }
+            }
+            else
+            {
+                return View();
+            }
+        }
+
 
         public ActionResult About()
         {

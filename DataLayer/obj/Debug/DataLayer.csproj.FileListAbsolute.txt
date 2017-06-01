@@ -8,3 +8,13 @@ c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\b
 c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
 c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.dll
 c:\users\celeste\documents\visual studio 2015\Projects\ProyectoFinal\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\DataLayer.dll.config
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\Celeste\Desktop\ProyectoFinalBueno\DataLayer\obj\Debug\DataLayer.pdb
