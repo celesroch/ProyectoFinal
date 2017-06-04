@@ -5,18 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="AlquilerLibrosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Clientes">
-          <Key>
-            <PropertyRef Name="idCliente" />
-          </Key>
-          <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DNI" Type="nvarchar" MaxLength="9" />
-          <Property Name="nombre" Type="nvarchar" MaxLength="50" />
-          <Property Name="apellidos" Type="nvarchar" MaxLength="80" />
-          <Property Name="direccion" Type="nvarchar" MaxLength="100" />
-          <Property Name="email" Type="nvarchar" MaxLength="100" />
-          <Property Name="comentario" Type="nvarchar" MaxLength="150" />
-        </EntityType>
         <EntityType Name="Libros">
           <Key>
             <PropertyRef Name="idLibro" />
@@ -28,15 +16,15 @@
           <Property Name="editorial" Type="nchar" MaxLength="80" />
           <Property Name="comentario" Type="text" />
         </EntityType>
-        <EntityType Name="Operaciones">
+        <EntityType Name="Prestamos">
           <Key>
-            <PropertyRef Name="idCliente" />
             <PropertyRef Name="idLibro" />
+            <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="idLibro" Type="int" Nullable="false" />
-          <Property Name="estado" Type="nvarchar" MaxLength="50" />
-          <Property Name="fecha" Type="datetime" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Observaciones" Type="text" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -50,27 +38,14 @@
           <Property Name="Email" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityContainer Name="AlquilerLibrosModelStoreContainer">
-          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlquilerLibrosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Clientes">
-          <Key>
-            <PropertyRef Name="idCliente" />
-          </Key>
-          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DNI" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="apellidos" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="comentario" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Libros">
           <Key>
             <PropertyRef Name="idLibro" />
@@ -83,21 +58,10 @@
           <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="AlquilerLibrosEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
           <EntitySet Name="Libros" EntityType="Self.Libros" />
-          <EntitySet Name="Operaciones" EntityType="AlquilerLibrosModel.Operaciones" />
           <EntitySet Name="Usuarios" EntityType="AlquilerLibrosModel.Usuarios" />
+          <EntitySet Name="Prestamos" EntityType="AlquilerLibrosModel.Prestamos" />
         </EntityContainer>
-        <EntityType Name="Operaciones">
-          <Key>
-            <PropertyRef Name="idCliente" />
-            <PropertyRef Name="idLibro" />
-          </Key>
-          <Property Name="idCliente" Type="Int32" Nullable="false" />
-          <Property Name="idLibro" Type="Int32" Nullable="false" />
-          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fecha" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="idUsuario" />
@@ -109,25 +73,22 @@
           <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Prestamos">
+          <Key>
+            <PropertyRef Name="idLibro" />
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idLibro" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AlquilerLibrosModelStoreContainer" CdmEntityContainer="AlquilerLibrosEntities">
-          <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="AlquilerLibrosModel.Clientes">
-              <MappingFragment StoreEntitySet="Clientes">
-                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-                <ScalarProperty Name="DNI" ColumnName="DNI" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="comentario" ColumnName="comentario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Libros">
             <EntityTypeMapping TypeName="AlquilerLibrosModel.Libros">
               <MappingFragment StoreEntitySet="Libros">
@@ -140,16 +101,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Operaciones">
-            <EntityTypeMapping TypeName="AlquilerLibrosModel.Operaciones">
-              <MappingFragment StoreEntitySet="Operaciones">
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
-                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="AlquilerLibrosModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
@@ -159,6 +110,16 @@
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prestamos">
+            <EntityTypeMapping TypeName="AlquilerLibrosModel.Prestamos">
+              <MappingFragment StoreEntitySet="Prestamos">
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

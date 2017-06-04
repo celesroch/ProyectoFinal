@@ -84,7 +84,6 @@ textarea {
     color: #fff;
 }
 /*Login*/
-body{background: #eee url(http://3.bp.blogspot.com/_9MHWX9_nZmk/S-r8ynEEd8I/AAAAAAAABlo/PICNl3nyBVg/s1600/FUNDO_CINZA_WILIAN.jpg);}
 html,body{
     position: relative;
     height: 100%;
@@ -220,4 +219,17 @@ html,body{
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+.LoginButton{
+    border-radius:12px 12px 12px 12px;
+    margin-top:15px;
+    color: #5bc0de!important;
+    background-color: #fff!important;
+    border-color: #5bc0de!important;
+}
+.LoginButton:hover{
+    border-radius:12px 12px 12px 12px;
+    color: #fff!important;
+    background-color: #5bc0de!important;
+    border-color: #5bc0de!important;
 }

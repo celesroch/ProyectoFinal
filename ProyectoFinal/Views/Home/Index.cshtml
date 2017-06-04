@@ -1,6 +1,6 @@
 ﻿@model ProyectoFinal.Models.Usuarios
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Login";
 }
 <div class="container">
     @using (Html.BeginForm())
@@ -16,7 +16,10 @@
                     <div>@Html.PasswordFor(m => m.Password, new { @placeholder = "Contraseña" })</div>
                 </div>
                 <div>
-                    <input class="btn btn-outline-primary" type="submit" value="Login" />
+                    <input class="LoginButton" type="submit" value="Login" />
+                </div>
+                <div>
+                    @Html.ActionLink("Alta Usuario","AltaUsuario","Usuarios")
                 </div>
                 <div>
                     @Html.ValidationMessageFor(m => m.NomUsuario)
@@ -71,3 +74,7 @@
     });
 
 </script>
+<style type="text/css">
+    body{background: #eee url(http://3.bp.blogspot.com/_9MHWX9_nZmk/S-r8ynEEd8I/AAAAAAAABlo/PICNl3nyBVg/s1600/FUNDO_CINZA_WILIAN.jpg);}
+
+</style>

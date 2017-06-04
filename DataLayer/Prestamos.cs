@@ -12,11 +12,11 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Operaciones
+    public partial class Prestamos
     {
-        public int idCliente { get; set; }
         public int idLibro { get; set; }
-        public string estado { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public int idUsuario { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+        public string Observaciones { get; set; }
     }
 }

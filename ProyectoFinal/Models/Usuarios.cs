@@ -11,10 +11,9 @@ namespace ProyectoFinal.Models
 {
     public class Usuarios
     {
-        [Required(ErrorMessage = "*")]
+        [Required(ErrorMessage = "Intruduce un nombre")]
         [Display(Name = "NomUsuario")]
         public string NomUsuario { get; set; }
-        [Required(ErrorMessage = "*")]
         [Display(Name = "Password")]
         public string Password { get; set; }
         public bool checkUser(string nomUsuario, string password)

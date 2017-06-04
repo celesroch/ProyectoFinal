@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AlquilerLibrosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Clientes">
-    <Key>
-      <PropertyRef Name="idCliente" />
-    </Key>
-    <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DNI" Type="nvarchar" MaxLength="9" />
-    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
-    <Property Name="apellidos" Type="nvarchar" MaxLength="80" />
-    <Property Name="direccion" Type="nvarchar" MaxLength="100" />
-    <Property Name="email" Type="nvarchar" MaxLength="100" />
-    <Property Name="comentario" Type="nvarchar" MaxLength="150" />
-  </EntityType>
   <EntityType Name="Libros">
     <Key>
       <PropertyRef Name="idLibro" />
@@ -23,15 +11,15 @@
     <Property Name="editorial" Type="nchar" MaxLength="80" />
     <Property Name="comentario" Type="text" />
   </EntityType>
-  <EntityType Name="Operaciones">
+  <EntityType Name="Prestamos">
     <Key>
-      <PropertyRef Name="idCliente" />
       <PropertyRef Name="idLibro" />
+      <PropertyRef Name="idUsuario" />
     </Key>
-    <Property Name="idCliente" Type="int" Nullable="false" />
     <Property Name="idLibro" Type="int" Nullable="false" />
-    <Property Name="estado" Type="nvarchar" MaxLength="50" />
-    <Property Name="fecha" Type="datetime" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="Observaciones" Type="text" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -45,9 +33,8 @@
     <Property Name="Email" Type="nvarchar" MaxLength="150" />
   </EntityType>
   <EntityContainer Name="AlquilerLibrosModelStoreContainer">
-    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Operaciones" EntityType="Self.Operaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

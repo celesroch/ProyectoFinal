@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AlquilerLibrosModelStoreContainer" CdmEntityContainer="AlquilerLibrosEntities">
-    <EntitySetMapping Name="Clientes">
-      <EntityTypeMapping TypeName="AlquilerLibrosModel.Clientes">
-        <MappingFragment StoreEntitySet="Clientes">
-          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-          <ScalarProperty Name="DNI" ColumnName="DNI" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="comentario" ColumnName="comentario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Libros">
       <EntityTypeMapping TypeName="AlquilerLibrosModel.Libros">
         <MappingFragment StoreEntitySet="Libros">
@@ -26,16 +13,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Operaciones">
-      <EntityTypeMapping TypeName="AlquilerLibrosModel.Operaciones">
-        <MappingFragment StoreEntitySet="Operaciones">
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
-          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="AlquilerLibrosModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
@@ -45,6 +22,16 @@
           <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamos">
+      <EntityTypeMapping TypeName="AlquilerLibrosModel.Prestamos">
+        <MappingFragment StoreEntitySet="Prestamos">
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

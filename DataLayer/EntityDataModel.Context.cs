@@ -25,9 +25,8 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Libros> Libros { get; set; }
-        public virtual DbSet<Operaciones> Operaciones { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Prestamos> Prestamos { get; set; }
     }
 }

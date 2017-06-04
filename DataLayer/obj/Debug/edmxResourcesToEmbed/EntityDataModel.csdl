@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AlquilerLibrosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Clientes">
-    <Key>
-      <PropertyRef Name="idCliente" />
-    </Key>
-    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DNI" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="apellidos" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="comentario" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Libros">
     <Key>
       <PropertyRef Name="idLibro" />
@@ -24,21 +12,10 @@
     <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityContainer Name="AlquilerLibrosEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
     <EntitySet Name="Libros" EntityType="Self.Libros" />
-    <EntitySet Name="Operaciones" EntityType="AlquilerLibrosModel.Operaciones" />
     <EntitySet Name="Usuarios" EntityType="AlquilerLibrosModel.Usuarios" />
+    <EntitySet Name="Prestamos" EntityType="AlquilerLibrosModel.Prestamos" />
   </EntityContainer>
-  <EntityType Name="Operaciones">
-    <Key>
-      <PropertyRef Name="idCliente" />
-      <PropertyRef Name="idLibro" />
-    </Key>
-    <Property Name="idCliente" Type="Int32" Nullable="false" />
-    <Property Name="idLibro" Type="Int32" Nullable="false" />
-    <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="fecha" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="Usuarios">
     <Key>
       <PropertyRef Name="idUsuario" />
@@ -49,5 +26,15 @@
     <Property Name="NomUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Prestamos">
+    <Key>
+      <PropertyRef Name="idLibro" />
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idLibro" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
