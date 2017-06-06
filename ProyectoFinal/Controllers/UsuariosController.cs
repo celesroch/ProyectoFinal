@@ -47,7 +47,7 @@ namespace ProyectoFinal.Controllers
             {
                 db.Usuarios.Add(usuarios);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View(usuarios);

@@ -156,4 +156,16 @@
   <data name="SectionAltaUserName" xml:space="preserve">
     <value>Nuevo Usuario:</value>
   </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Bienvenid@:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="NameUser" xml:space="preserve">
+    <value>Nombre del usuario:</value>
+  </data>
+  <data name="Observations" xml:space="preserve">
+    <value>Observaciones:</value>
+  </data>
 </root>

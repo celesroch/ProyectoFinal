@@ -48,5 +48,9 @@ namespace ProyectoFinal.Controllers
 
             return View();
         }
+        public ActionResult Menu()
+        {
+            return View();
+        }
     }
 }

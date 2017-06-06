@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fecha:.
+        /// </summary>
+        internal static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Más información.
         /// </summary>
         internal static string Details {
@@ -133,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre del usuario:.
+        /// </summary>
+        internal static string NameUser {
+            get {
+                return ResourceManager.GetString("NameUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Añadir Libro.
         /// </summary>
         internal static string NewBook {
@@ -147,6 +165,15 @@ namespace Resources {
         internal static string NewUser {
             get {
                 return ResourceManager.GetString("NewUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Observaciones:.
+        /// </summary>
+        internal static string Observations {
+            get {
+                return ResourceManager.GetString("Observations", resourceCulture);
             }
         }
         
@@ -174,6 +201,15 @@ namespace Resources {
         internal static string SelectionBook {
             get {
                 return ResourceManager.GetString("SelectionBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bienvenid@:.
+        /// </summary>
+        internal static string WelcomeMessage {
+            get {
+                return ResourceManager.GetString("WelcomeMessage", resourceCulture);
             }
         }
     }
