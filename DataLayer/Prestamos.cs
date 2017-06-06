@@ -23,6 +23,6 @@ namespace DataLayer
         public Nullable<System.DateTime> Fecha { get; set; }
         public string Observaciones { get; set; }
         
-        public Libros libroselected { get; set; }
     }
+
 }
