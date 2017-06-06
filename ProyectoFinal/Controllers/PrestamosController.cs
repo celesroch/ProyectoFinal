@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DataLayer;
+using System.Web.UI.WebControls;
 
 namespace ProyectoFinal.Controllers
 {
@@ -18,7 +19,9 @@ namespace ProyectoFinal.Controllers
         public ActionResult Index()
         {
             return View(db.Prestamos.ToList());
+
         }
+
 
         // GET: Prestamos/Details/5
         public ActionResult Details(int? id)
@@ -38,8 +41,17 @@ namespace ProyectoFinal.Controllers
         // GET: Prestamos/Create
         public ActionResult Create()
         {
+            var getBooks = db.Libros.ToList();
+            SelectList listB = new SelectList(getBooks, "idLibro", "nomLibro");
+            ViewBag.listBooks = listB;
+
+            var getUsers = db.Usuarios.ToList();
+            SelectList listU = new SelectList(getUsers, "idUsuario", "Nombre");
+            ViewBag.listUsers = listU;
+
             return View();
         }
+
 
         // POST: Prestamos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

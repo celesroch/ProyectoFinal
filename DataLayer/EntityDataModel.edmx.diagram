@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2e9fddf352d34fc0b85f77c2ad3af735" Name="Diagram1" ZoomLevel="94">
-        <EntityTypeShape EntityType="AlquilerLibrosModel.Libros" Width="1.5" PointX="2.125" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlquilerLibrosModel.Usuarios" Width="1.5" PointX="4.75" PointY="0.5" />
-        <EntityTypeShape EntityType="AlquilerLibrosModel.Prestamos" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AlquilerLibrosModel.Libros" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlquilerLibrosModel.Usuarios" Width="1.5" PointX="11" PointY="0.625" />
+        <EntityTypeShape EntityType="AlquilerLibrosModel.Prestamos" Width="1.5" PointX="8.25" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

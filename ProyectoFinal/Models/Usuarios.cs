@@ -26,7 +26,9 @@ namespace ProyectoFinal.Models
                 SqlCommand cmd = new SqlCommand("Select count (*) from Usuarios where NomUsuario='" + nomUsuario + "' and Password='" + password + "'", conn);
                 flag = Convert.ToBoolean(cmd.ExecuteScalar());
                 return flag;
+               
             }
+            
         }
 
 

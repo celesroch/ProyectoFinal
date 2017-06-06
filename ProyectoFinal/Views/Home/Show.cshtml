@@ -7,4 +7,13 @@
 <h2>Show</h2>
 <div>
     <h3> Hi! @Model.NomUsuario</h3> @*Show the name of th euser who is logged in.*@
+    <div>
+        <button type="button" class="btn btn-secondary btn-lg" OnClick="location.href = 'Libros/MostrarLibros'">Libros</button>
+        <button type="button" class="btn btn-secondary btn-lg" OnClick="location.href = 'Libros/Create'">Nuevo Libro</button>
+    </div>
+    <br/>
+    <div>
+        <button type="button" class="btn btn-secondary btn-lg" OnClick="location.href = 'Prestamos/Index'">Préstamos</button>
+        <button type="button" class="btn btn-secondary btn-lg" OnClick="location.href = 'Prestamos/Create'">Nuevo Préstamo</button>
+    </div>
 </div>
