@@ -11,18 +11,12 @@ namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Prestamos
     {
-        [Key]
         public int idLibro { get; set; }
-
-        [Key]
         public int idUsuario { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public string Observaciones { get; set; }
-        
     }
-
 }

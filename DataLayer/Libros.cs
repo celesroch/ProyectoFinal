@@ -11,17 +11,14 @@ namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Libros
     {
-        [Key]
         public int idLibro { get; set; }
         public string nomLibro { get; set; }
         public string ISBN { get; set; }
         public string autor { get; set; }
         public string editorial { get; set; }
         public string comentario { get; set; }
-
     }
 }

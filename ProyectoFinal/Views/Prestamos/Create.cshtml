@@ -25,7 +25,7 @@
                 <label>@Resources.Resources.NameUser</label>
             </div>
             <div class="col-xs-3 col-md-3 col-lg-3">
-                @Html.DropDownList("bookList1", ViewBag.listUsers as SelectList, "---Usuarios---")
+                @Html.DropDownList("bookList1", ViewBag.listUsers as SelectList, "manolo")
                 @Html.ValidationMessageFor(model => model.idUsuario, "", new { @class = "text-danger" })
             </div>
 
@@ -51,7 +51,9 @@
         <br/>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-warning" />
+                <button type="button" class="btn btn-warning" OnClick="location.href = '/Prestamos/Index'">Guardar</button>
+
+                @*<input type="submit" value="Guardar" class="btn btn-warning" />*@
             </div>
         </div>
     </div>

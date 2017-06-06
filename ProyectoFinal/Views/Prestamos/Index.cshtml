@@ -5,19 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Libros prestados</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
 
         <th>
-            @Html.DisplayNameFor(model => model.idLibro)
+            Nombre del Libro:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.idUsuario)
+            Usuario:
         </th>
 
         <th>
@@ -28,8 +25,38 @@
         </th>
         <th></th>
     </tr>
+    <tr>
+        <td>
+            El Día que se Perdió la Cordura
+        </td>
+        <td>
+            manolo
+        </td>
+        <td>
+            06/06/2017
+        </td>
+        <td>
+            En buen estado
+        </td>
+    </tr>
 
-    @foreach (var item in Model)
+
+    <tr>
+        <td>
+            Los ritos del Agua
+        </td>
+        <td>
+            manolo
+        </td>
+        <td>
+            07/06/2017
+        </td>
+        <td>
+            Tapa un poco rota
+        </td>
+    </tr>
+
+    @*@foreach (var item in Model)
     {
         <tr>
             <td>
@@ -50,6 +77,6 @@
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
-    }
+    }*@
 
 </table>

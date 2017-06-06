@@ -4,45 +4,45 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AlquilerLibrosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Libros">
-          <Key>
-            <PropertyRef Name="idLibro" />
-          </Key>
-          <Property Name="idLibro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nomLibro" Type="nvarchar" MaxLength="100" />
-          <Property Name="ISBN" Type="nvarchar" MaxLength="15" />
-          <Property Name="autor" Type="nvarchar" MaxLength="100" />
-          <Property Name="editorial" Type="nchar" MaxLength="80" />
-          <Property Name="comentario" Type="text" />
-        </EntityType>
-        <EntityType Name="Prestamos">
-          <Key>
-            <PropertyRef Name="idLibro" />
-            <PropertyRef Name="idUsuario" />
-          </Key>
-          <Property Name="idLibro" Type="int" Nullable="false" />
-          <Property Name="idUsuario" Type="int" Nullable="false" />
-          <Property Name="Fecha" Type="date" />
-          <Property Name="Observaciones" Type="text" />
-        </EntityType>
-        <EntityType Name="Usuarios">
-          <Key>
-            <PropertyRef Name="idUsuario" />
-          </Key>
-          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="nvarchar" MaxLength="70" />
-          <Property Name="Apellidos" Type="nvarchar" MaxLength="100" />
-          <Property Name="NomUsuario" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="150" />
-          <Property Name="Email" Type="nvarchar" MaxLength="150" />
-        </EntityType>
-        <EntityContainer Name="AlquilerLibrosModelStoreContainer">
-          <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Prestamos" EntityType="Self.Prestamos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="AlquilerLibrosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AlquilerLibrosModelStoreContainer">
+    <EntitySet Name="Libros" EntityType="AlquilerLibrosModel.Store.Libros" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="AlquilerLibrosModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prestamos" EntityType="AlquilerLibrosModel.Store.Prestamos" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Libros">
+    <Key>
+      <PropertyRef Name="idLibro" />
+    </Key>
+    <Property Name="idLibro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomLibro" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ISBN" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="autor" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="editorial" Type="nchar" Nullable="true" MaxLength="80" />
+    <Property Name="comentario" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="70" />
+    <Property Name="Apellidos" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="NomUsuario" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Prestamos">
+    <Key>
+      <PropertyRef Name="idLibro" />
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idLibro" Type="int" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="true" />
+    <Property Name="Observaciones" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlquilerLibrosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -87,45 +87,44 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AlquilerLibrosModelStoreContainer" CdmEntityContainer="AlquilerLibrosEntities">
-          <EntitySetMapping Name="Libros">
-            <EntityTypeMapping TypeName="AlquilerLibrosModel.Libros">
-              <MappingFragment StoreEntitySet="Libros">
-                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
-                <ScalarProperty Name="nomLibro" ColumnName="nomLibro" />
-                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
-                <ScalarProperty Name="autor" ColumnName="autor" />
-                <ScalarProperty Name="editorial" ColumnName="editorial" />
-                <ScalarProperty Name="comentario" ColumnName="comentario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="AlquilerLibrosModel.Usuarios">
-              <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="NomUsuario" ColumnName="NomUsuario" />
-                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Prestamos">
-            <EntityTypeMapping TypeName="AlquilerLibrosModel.Prestamos">
-              <MappingFragment StoreEntitySet="Prestamos">
-                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="idLibro" ColumnName="idLibro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlquilerLibrosModelStoreContainer" CdmEntityContainer="AlquilerLibrosEntities">
+    <EntitySetMapping Name="Libros">
+      <EntityTypeMapping TypeName="IsTypeOf(AlquilerLibrosModel.Libros)">
+        <MappingFragment StoreEntitySet="Libros">
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+          <ScalarProperty Name="nomLibro" ColumnName="nomLibro" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="editorial" ColumnName="editorial" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(AlquilerLibrosModel.Usuarios)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="NomUsuario" ColumnName="NomUsuario" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prestamos">
+      <EntityTypeMapping TypeName="IsTypeOf(AlquilerLibrosModel.Prestamos)">
+        <MappingFragment StoreEntitySet="Prestamos">
+          <ScalarProperty Name="idLibro" ColumnName="idLibro" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -139,7 +138,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

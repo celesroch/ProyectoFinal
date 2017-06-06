@@ -11,11 +11,9 @@ namespace DataLayer
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Usuarios
     {
-        [Key]
         public int idUsuario { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
